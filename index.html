@@ -1,111 +1,278 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tempo Fitness</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-      background-image: url('./arka-plan.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #000;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.60);
-      z-index: -1;
+      background:
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
+        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80')
+        no-repeat center center / cover;
+      background-attachment: fixed;
     }
 
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h1 {
-      font-size: 60px;
       margin: 0;
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.45);
     }
 
     .subtitle {
-      margin: 12px 0 24px;
-      color: #ddd;
+      margin-top: 14px;
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: #e6e6e6;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
     }
 
     .btn {
       display: inline-block;
-      background: linear-gradient(135deg,#FFD700,#FFA500);
-      color: black;
-      padding: 12px 26px;
-      border-radius: 10px;
+      background: linear-gradient(135deg, #FFD700, #F2B300);
+      color: #111;
+      padding: 14px 28px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(255, 215, 0, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.03);
     }
 
     .section {
-      padding: 60px 20px;
-      background: rgba(0,0,0,0.72);
+      padding: 70px 20px;
+      background: rgba(0,0,0,0.76);
+    }
+
+    .section-title {
+      margin: 0 0 30px;
+      font-size: 36px;
+      font-weight: 800;
+      color: #ffd54a;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .card {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 25px;
+      min-width: 220px;
+      padding: 18px 22px;
       background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      backdrop-filter: blur(4px);
+      font-weight: 700;
+    }
+
+    .contact-box {
+      max-width: 950px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,215,0,0.18);
+      border-radius: 24px;
+      padding: 30px 20px;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .contact-item {
+      min-width: 240px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-label {
+      font-size: 13px;
+      color: #ffd54a;
+      margin-bottom: 8px;
+    }
+
+    .contact-value {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .map-button-wrap {
+      margin-top: 28px;
+    }
+
+    .map-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFD700, #F2B300);
+      color: #111;
+      padding: 14px 28px;
       border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(255, 215, 0, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .map-btn:hover {
+      transform: translateY(-2px) scale(1.03);
     }
 
     .whatsapp {
       position: fixed;
-      bottom: 20px;
       right: 20px;
-      background: linear-gradient(135deg,#FFD700,#FFA500);
-      color: black;
-      padding: 15px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       text-decoration: none;
-      font-size: 20px;
-      box-shadow: 0 0 15px rgba(255,215,0,0.7);
+      font-size: 24px;
+      color: #111;
+      background: linear-gradient(135deg, #FFD700, #F2B300);
+      box-shadow: 0 0 20px rgba(255,215,0,0.45);
+      z-index: 999;
+      transition: 0.25s ease;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    footer {
+      padding: 24px 15px;
+      background: rgba(0,0,0,0.9);
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .card,
+      .contact-item {
+        min-width: unset;
+        width: 100%;
+        max-width: 340px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
+  <section class="hero">
     <h1>TEMPO FITNESS</h1>
     <p class="subtitle">Stronger Every Day</p>
-    <a class="btn" href="https://wa.me/905XXXXXXXXX">Hemen Başla</a>
-  </div>
+    <a class="btn" href="https://wa.me/905343020088" target="_blank">Hemen Başla</a>
+  </section>
 
-  <div class="section">
-    <h2>Hizmetler</h2>
-    <div class="card">Fitness</div>
-    <div class="card">Cardio</div>
-    <div class="card">PT (Özel Ders)</div>
-    <div class="card">Fonksiyonel</div>
-  </div>
+  <section class="section">
+    <h2 class="section-title">Hizmetler</h2>
+    <div class="cards">
+      <div class="card">Fitness</div>
+      <div class="card">Cardio</div>
+      <div class="card">PT (Özel Ders)</div>
+      <div class="card">Fonksiyonel Antrenman</div>
+    </div>
+  </section>
 
-  <div class="section">
-    <h2>Neden Tempo?</h2>
-    <div class="card">Modern ekipman</div>
-    <div class="card">Profesyonel koçlar</div>
-    <div class="card">Temiz & Ferah salon</div>
-  </div>
+  <section class="section">
+    <h2 class="section-title">Neden Tempo?</h2>
+    <div class="cards">
+      <div class="card">Modern ekipman</div>
+      <div class="card">Profesyonel koçlar</div>
+      <div class="card">Temiz & ferah salon</div>
+      <div class="card">Premium atmosfer</div>
+    </div>
+  </section>
 
-  <a href="https://wa.me/905343020088" class="whatsapp">💬</a>
+  <section class="section" id="iletisim">
+    <div class="contact-box">
+      <h2 class="section-title">İletişim</h2>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-label">Telefon</div>
+          <div class="contact-value">0534 302 00 88</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Adres</div>
+          <div class="contact-value">Oba, Fabrika Cd. Tan Apt No:9/1 Dükkan 1, 07400 Alanya / Antalya</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-label">Instagram</div>
+          <div class="contact-value">@tempofitnessgym</div>
+        </div>
+      </div>
+
+      <div class="map-button-wrap">
+        <a class="map-btn" href="https://share.google/dslp1Xg6f7hNiYsRL" target="_blank">
+          Konumu Aç
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp" href="https://wa.me/905343020088" target="_blank">💬</a>
+
+  <footer>
+    © 2026 Tempo Fitness
+  </footer>
 
 </body>
 </html>
