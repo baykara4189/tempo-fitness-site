@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tempo Fitness | Alanya</title>
-  <meta name="description" content="Tempo Fitness Alanya - Premium spor salonu deneyimi. Modern ekipman, güçlü atmosfer ve profesyonel antrenör kadrosu." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Tempo Fitness</title>
 
   <style>
     * {
@@ -18,7 +14,7 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: Arial, sans-serif;
       background: #0a0a0a;
       color: #fff;
       overflow-x: hidden;
@@ -31,98 +27,93 @@
 
     .container {
       width: 90%;
-      max-width: 1250px;
-      margin: 0 auto;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .navbar {
+    header {
       position: fixed;
+      width: 100%;
       top: 0;
       left: 0;
-      width: 100%;
       z-index: 999;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .nav-wrap {
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: 1px;
+      font-size: 24px;
+      font-weight: bold;
       color: #fff;
+      white-space: nowrap;
     }
 
     .logo span {
-      color: #d4af37;
+      color: #ffd700;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     .nav-links {
       display: flex;
-      gap: 26px;
       align-items: center;
+      gap: 18px;
     }
 
     .nav-links a {
+      color: #fff;
       font-size: 14px;
-      color: #ddd;
       transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: #d4af37;
+      color: #ffd700;
     }
 
-    .btn {
-      display: inline-flex;
+    .lang-switch {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 14px 24px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: 0.3s;
-      border: none;
+      gap: 10px;
+    }
+
+    .lang-switch img {
+      width: 28px;
+      height: 20px;
+      object-fit: cover;
       cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: 0.25s;
     }
 
-    .btn-gold {
-      background: linear-gradient(135deg, #d4af37, #f1d77a);
-      color: #000;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.25);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 35px rgba(212,175,55,0.35);
-    }
-
-    .btn-dark {
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .btn-dark:hover {
-      background: rgba(255,255,255,0.14);
+    .lang-switch img:hover {
+      transform: scale(1.08);
+      border-color: #ffd700;
     }
 
     .hero {
-      min-height: 100vh;
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
       display: flex;
       align-items: center;
-      position: relative;
       overflow: hidden;
-      background: #000;
     }
 
-    .hero-video {
+    .hero video {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -131,58 +122,89 @@
       z-index: 0;
     }
 
-    .hero-overlay {
+    .hero::after {
+      content: "";
       position: absolute;
       inset: 0;
-      z-index: 1;
       background:
-        linear-gradient(to right, rgba(0,0,0,0.90) 12%, rgba(0,0,0,0.48) 55%, rgba(0,0,0,0.80) 100%),
-        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 30%);
+        linear-gradient(to right, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.76) 100%);
+      z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 760px;
-      padding-top: 90px;
+      max-width: 700px;
+      padding-top: 80px;
     }
 
     .hero-tag {
       display: inline-block;
       padding: 8px 14px;
-      border: 1px solid rgba(212,175,55,0.35);
-      background: rgba(212,175,55,0.08);
-      color: #f1d77a;
+      border: 1px solid rgba(255,215,0,0.35);
+      background: rgba(255,215,0,0.08);
+      color: #f7d76c;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: bold;
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(40px, 7vw, 84px);
-      line-height: 0.95;
+      font-size: clamp(40px, 7vw, 74px);
+      line-height: 0.98;
+      margin-bottom: 18px;
       font-weight: 900;
-      margin-bottom: 20px;
     }
 
     .hero h1 span {
-      color: #d4af37;
+      color: #ffd700;
     }
 
     .hero p {
       font-size: 18px;
+      color: #ddd;
       line-height: 1.7;
-      color: #d1d1d1;
-      max-width: 650px;
-      margin-bottom: 32px;
+      max-width: 640px;
+      margin-bottom: 28px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 42px;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37, #f1d77a);
+      color: #000;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .btn-dark:hover {
+      background: rgba(255,255,255,0.14);
     }
 
     .hero-stats {
@@ -196,88 +218,89 @@
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
-      padding: 24px;
+      padding: 22px;
       backdrop-filter: blur(8px);
     }
 
     .stat-box h3 {
-      font-size: 28px;
-      color: #d4af37;
+      font-size: 26px;
+      color: #ffd700;
       margin-bottom: 8px;
     }
 
     .stat-box p {
       font-size: 14px;
-      color: #c9c9c9;
+      color: #ccc;
       line-height: 1.5;
     }
 
     section {
-      padding: 90px 0;
+      padding: 95px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 18px;
-      font-size: 42px;
+      font-size: 40px;
       font-weight: 900;
+      margin-bottom: 16px;
     }
 
     .section-title span {
-      color: #d4af37;
+      color: #ffd700;
     }
 
     .section-subtitle {
       text-align: center;
       max-width: 760px;
-      margin: 0 auto 60px;
-      color: #bcbcbc;
+      margin: 0 auto 54px;
+      color: #bbb;
       line-height: 1.8;
       font-size: 17px;
     }
 
-    .about-grid {
+    .about {
       display: grid;
-      grid-template-columns: 1.15fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 34px;
       align-items: center;
     }
 
     .about-image {
-      border-radius: 28px;
-      overflow: hidden;
-      min-height: 500px;
-      background:
-        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.28)),
-        url('about.jpg.jpeg') center/cover no-repeat;
+      height: 430px;
+      border-radius: 24px;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.28)),
+        url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
     .about-card {
       background: #111;
-      border-radius: 28px;
-      padding: 38px;
+      border-radius: 24px;
+      padding: 34px;
       border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
     }
 
     .about-card h3 {
-      font-size: 34px;
-      margin-bottom: 18px;
+      font-size: 32px;
+      margin-bottom: 16px;
     }
 
     .about-card h3 span {
-      color: #d4af37;
+      color: #ffd700;
     }
 
     .about-card p {
-      color: #cbcbcb;
-      line-height: 1.9;
-      margin-bottom: 18px;
+      color: #ccc;
+      line-height: 1.85;
       font-size: 16px;
+      margin-bottom: 16px;
     }
 
-    .features {
+    .features-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
@@ -286,73 +309,70 @@
     .feature-box {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 28px;
-      transition: 0.3s;
+      border-radius: 22px;
+      padding: 26px;
+      transition: 0.25s;
     }
 
     .feature-box:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212,175,55,0.35);
+      transform: translateY(-5px);
+      border-color: rgba(255,215,0,0.35);
     }
 
     .feature-icon {
-      font-size: 34px;
-      margin-bottom: 16px;
+      font-size: 32px;
+      margin-bottom: 14px;
     }
 
     .feature-box h4 {
       font-size: 20px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .feature-box p {
-      color: #bdbdbd;
+      color: #bbb;
       line-height: 1.7;
       font-size: 15px;
     }
 
     .pricing {
-      background: linear-gradient(to bottom, #0a0a0a, #0f0f0f);
+      background: linear-gradient(to bottom, #0a0a0a, #101010);
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
-      align-items: stretch;
     }
 
     .price-card {
       background: #121212;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 36px 30px;
+      border-radius: 24px;
+      padding: 34px 28px;
       position: relative;
-      transition: 0.35s;
+      transition: 0.25s;
     }
 
     .price-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(212,175,55,0.4);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+      transform: translateY(-6px);
+      border-color: rgba(255,215,0,0.35);
     }
 
     .price-card.popular {
-      border: 1px solid rgba(212,175,55,0.35);
-      box-shadow: 0 10px 40px rgba(212,175,55,0.08);
+      border-color: rgba(255,215,0,0.30);
     }
 
     .badge {
       position: absolute;
-      top: 18px;
-      right: 18px;
+      top: 16px;
+      right: 16px;
       background: linear-gradient(135deg, #d4af37, #f1d77a);
       color: #000;
       font-size: 12px;
-      padding: 7px 12px;
-      border-radius: 999px;
       font-weight: 800;
+      border-radius: 999px;
+      padding: 7px 12px;
     }
 
     .price-card h3 {
@@ -361,74 +381,37 @@
     }
 
     .price-note {
-      color: #cfcfcf;
-      margin-bottom: 26px;
-      font-size: 15px;
+      color: #ccc;
       line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 22px;
     }
 
     .price-list {
       list-style: none;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .price-list li {
-      color: #d4d4d4;
-      padding: 11px 0;
+      padding: 10px 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: #d8d8d8;
       font-size: 15px;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .gallery-item {
-      border-radius: 22px;
-      overflow: hidden;
-      min-height: 250px;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s;
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.02);
-    }
-
-    .gallery-item:nth-child(1) { background: url('hero.jpg.jpeg'); }
-    .gallery-item:nth-child(2) { background: url('about.jpg.jpeg'); }
-    .gallery-item:nth-child(3) { background: url('gallery2.jpg.jpeg'); }
-    .gallery-item:nth-child(4) { background: url('gallery3.jpg.jpeg'); }
-    .gallery-item:nth-child(5) { background: url('1.jpeg'); }
-    .gallery-item:nth-child(6) { background: url('2.jpeg'); }
-    .gallery-item:nth-child(7) { background: url('3.jpeg'); }
-    .gallery-item:nth-child(8) { background: url('4.jpeg'); }
-
-    .extra-gallery {
-      margin-top: 18px;
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
 
-    .extra-gallery .gallery-item:nth-child(1) {
-      background: url('5.jpeg');
-      min-height: 240px;
-    }
-
-    .extra-gallery .gallery-item:nth-child(2) {
-      background: url('6.jpeg');
-      min-height: 240px;
-    }
-
-    .extra-gallery .gallery-item:nth-child(3) {
-      background: url('7.jpeg');
-      min-height: 240px;
+    .gallery-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: block;
     }
 
     .team {
@@ -438,66 +421,87 @@
     .team-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 20px;
     }
 
     .team-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 28px;
-      transition: 0.3s;
-      min-height: 220px;
+      border-radius: 22px;
+      padding: 26px;
+      transition: 0.25s;
     }
 
     .team-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(212,175,55,0.35);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      transform: translateY(-5px);
+      border-color: rgba(255,215,0,0.35);
     }
 
     .team-role {
       display: inline-block;
+      background: linear-gradient(135deg, #d4af37, #f1d77a);
+      color: #000;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      color: #000;
-      background: linear-gradient(135deg, #d4af37, #f1d77a);
       padding: 8px 12px;
       border-radius: 999px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .team-card h3 {
       font-size: 22px;
-      margin-bottom: 8px;
-      color: #fff;
+      margin-bottom: 10px;
     }
 
     .team-card p {
-      color: #bdbdbd;
+      color: #bbb;
       line-height: 1.8;
       font-size: 15px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,215,0,0.16);
+      border-radius: 28px;
+      padding: 54px 30px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .cta-box h2 span {
+      color: #ffd700;
+    }
+
+    .cta-box p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: #ccc;
+      line-height: 1.8;
+      font-size: 17px;
     }
 
     .contact-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 26px;
+      gap: 24px;
     }
 
     .contact-card,
     .map-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 34px;
+      border-radius: 24px;
+      padding: 30px;
     }
 
     .contact-card h3,
     .map-card h3 {
       font-size: 30px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .contact-item {
@@ -524,13 +528,12 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .map-box {
-      border-radius: 18px;
       overflow: hidden;
-      min-height: 340px;
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -539,35 +542,6 @@
       height: 340px;
       border: 0;
       filter: grayscale(100%) invert(92%) contrast(90%);
-    }
-
-    .cta {
-      padding: 90px 0;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, rgba(212,175,55,0.14), rgba(255,255,255,0.04));
-      border: 1px solid rgba(212,175,55,0.18);
-      border-radius: 32px;
-      padding: 56px 34px;
-      text-align: center;
-    }
-
-    .cta-box h2 {
-      font-size: 44px;
-      margin-bottom: 18px;
-    }
-
-    .cta-box h2 span {
-      color: #d4af37;
-    }
-
-    .cta-box p {
-      max-width: 720px;
-      margin: 0 auto 28px;
-      color: #cfcfcf;
-      line-height: 1.8;
-      font-size: 17px;
     }
 
     footer {
@@ -586,31 +560,30 @@
     }
 
     @media (max-width: 1100px) {
-      .features,
+      .features-grid,
       .pricing-grid,
-      .hero-stats,
-      .team-grid {
+      .team-grid,
+      .hero-stats {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .gallery-grid,
-      .extra-gallery {
+      .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .about-grid,
+      .about,
       .contact-wrap {
         grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        min-height: 380px;
       }
     }
 
     @media (max-width: 768px) {
       .nav-links {
         display: none;
+      }
+
+      .nav-right {
+        gap: 10px;
       }
 
       .hero {
@@ -626,89 +599,90 @@
         justify-content: center;
       }
 
-      .features,
+      .features-grid,
       .pricing-grid,
       .gallery-grid,
-      .extra-gallery,
-      .hero-stats,
-      .team-grid {
+      .team-grid,
+      .hero-stats {
         grid-template-columns: 1fr;
       }
 
       .section-title {
-        font-size: 34px;
-      }
-
-      .cta-box h2 {
         font-size: 32px;
       }
 
-      .about-card,
-      .price-card,
-      .contact-card,
-      .map-card,
-      .cta-box,
-      .team-card {
-        padding: 26px;
+      .cta-box h2 {
+        font-size: 30px;
+      }
+
+      .about-image {
+        height: 320px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="container nav-wrap">
-      <a href="#" class="logo">TEMPO <span>FITNESS</span></a>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">TEMPO <span>FITNESS</span></div>
 
-      <nav class="nav-links">
-        <a href="#about">Hakkımızda</a>
-        <a href="#features">Özellikler</a>
-        <a href="#pricing">Paketler</a>
-        <a href="#gallery">Galeri</a>
-        <a href="#team">Ekibimiz</a>
-        <a href="#contact">İletişim</a>
-        <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">İletişim</a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#about" id="nav-about">Hakkımızda</a>
+            <a href="#features" id="nav-features">Özellikler</a>
+            <a href="#pricing" id="nav-pricing">Paketler</a>
+            <a href="#gallery" id="nav-gallery">Galeri</a>
+            <a href="#team" id="nav-team">Ekip</a>
+            <a href="#contact" id="nav-contact">İletişim</a>
+          </div>
+
+          <div class="lang-switch">
+            <img src="https://flagcdn.com/w40/tr.png" alt="Türkçe" onclick="setLang('tr')">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" onclick="setLang('en')">
+            <img src="https://flagcdn.com/w40/ru.png" alt="Русский" onclick="setLang('ru')">
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
+    <video autoplay muted loop playsinline>
       <source src="tempo-video.mp4.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-overlay"></div>
-
     <div class="container">
       <div class="hero-content">
-        <div class="hero-tag">ALANYA’DA PREMIUM SPOR DENEYİMİ</div>
+        <div class="hero-tag" id="hero-tag">ALANYA’DA PREMIUM SPOR DENEYİMİ</div>
 
-        <h1>Gücünü <span>Tempo</span> ile Yükselt</h1>
+        <h1 id="hero-title">Gücünü <span>Tempo</span> ile Yükselt</h1>
 
-        <p>
+        <p id="hero-text">
           Modern ekipmanlar, ferah kardiyo alanı, güçlü atmosfer ve gerçek sonuç odaklı sistem.
           Tempo Fitness’ta sadece spor yapmazsın, seviyeni yükseltirsin.
         </p>
 
         <div class="hero-buttons">
-          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">Instagram'dan Yaz</a>
-          <a href="#gallery" class="btn btn-dark">Salonumuzu Gör</a>
+          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold" id="hero-btn-1">Instagram'dan Yaz</a>
+          <a href="#gallery" class="btn btn-dark" id="hero-btn-2">Salonumuzu Gör</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat-box">
-            <h3>Modern</h3>
-            <p>Yeni nesil ekipmanlar ve ferah salon düzeni</p>
+            <h3 id="stat-1-title">Modern</h3>
+            <p id="stat-1-text">Yeni nesil ekipmanlar ve ferah salon düzeni</p>
           </div>
 
           <div class="stat-box">
-            <h3>Premium</h3>
-            <p>Şık tasarım, temiz alanlar ve güçlü atmosfer</p>
+            <h3 id="stat-2-title">Premium</h3>
+            <p id="stat-2-text">Şık tasarım, temiz alanlar ve güçlü atmosfer</p>
           </div>
 
           <div class="stat-box">
-            <h3>Sonuç</h3>
-            <p>Kas gelişimi, yağ yakımı ve performans odaklı sistem</p>
+            <h3 id="stat-3-title">Sonuç</h3>
+            <p id="stat-3-text">Kas gelişimi, yağ yakımı ve performans odaklı sistem</p>
           </div>
         </div>
       </div>
@@ -717,27 +691,27 @@
 
   <section id="about">
     <div class="container">
-      <h2 class="section-title">Neden <span>Tempo Fitness?</span></h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" id="about-section-title">Neden <span>Tempo Fitness?</span></h2>
+      <p class="section-subtitle" id="about-section-subtitle">
         Geniş alan, güçlü ekipmanlar, premium görünüm ve motive eden atmosfer.
       </p>
 
-      <div class="about-grid">
+      <div class="about">
         <div class="about-image"></div>
 
         <div class="about-card">
-          <h3>Disiplin. Kalite. <span>Gelişim.</span></h3>
-          <p>
+          <h3 id="about-title">Disiplin. Kalite. <span>Gelişim.</span></h3>
+          <p id="about-text-1">
             Tempo Fitness, hem yeni başlayanlara hem de ciddi antrenman yapanlara hitap eden modern bir spor salonudur.
             Kardiyo alanı, makineler, serbest ağırlık bölümü ve sosyal alanlarıyla gerçek salon deneyimi sunar.
           </p>
-          <p>
+          <p id="about-text-2">
             Burada amaç sadece kayıt olmak değil; gelişmek, güçlenmek ve kendinin daha iyi versiyonuna ulaşmaktır.
           </p>
-          <p>
+          <p id="about-text-3">
             Güçlü başlangıç için doğru yer: <strong>Tempo Fitness</strong>.
           </p>
-          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">İletişime Geç</a>
+          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold" id="about-btn">İletişime Geç</a>
         </div>
       </div>
     </div>
@@ -745,34 +719,34 @@
 
   <section id="features">
     <div class="container">
-      <h2 class="section-title">Salonun <span>Avantajları</span></h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" id="features-title">Salonun <span>Avantajları</span></h2>
+      <p class="section-subtitle" id="features-subtitle">
         Performans, konfor ve görünümü bir arada sunan detaylar.
       </p>
 
-      <div class="features">
+      <div class="features-grid">
         <div class="feature-box">
           <div class="feature-icon">🏋️</div>
-          <h4>Makine & Ağırlık Alanı</h4>
-          <p>Verimli çalışma düzeni, güçlü ekipmanlar ve ferah kullanım alanı.</p>
+          <h4 id="feature-1-title">Makine & Ağırlık Alanı</h4>
+          <p id="feature-1-text">Verimli çalışma düzeni, güçlü ekipmanlar ve ferah kullanım alanı.</p>
         </div>
 
         <div class="feature-box">
           <div class="feature-icon">🏃</div>
-          <h4>Kardiyo Bölümü</h4>
-          <p>Cam kenarı yerleşim, koşu bantları, bisikletler ve modern atmosfer.</p>
+          <h4 id="feature-2-title">Kardiyo Bölümü</h4>
+          <p id="feature-2-text">Cam kenarı yerleşim, koşu bantları, bisikletler ve modern atmosfer.</p>
         </div>
 
         <div class="feature-box">
           <div class="feature-icon">☕</div>
-          <h4>Bar & Resepsiyon</h4>
-          <p>Karşılama alanı, sosyal his ve güçlü marka deneyimi.</p>
+          <h4 id="feature-3-title">Bar & Resepsiyon</h4>
+          <p id="feature-3-text">Karşılama alanı, sosyal his ve güçlü marka deneyimi.</p>
         </div>
 
         <div class="feature-box">
           <div class="feature-icon">✨</div>
-          <h4>Temiz ve Şık Tasarım</h4>
-          <p>Premium detaylar, düzenli alanlar ve modern salon mimarisi.</p>
+          <h4 id="feature-4-title">Temiz ve Şık Tasarım</h4>
+          <p id="feature-4-text">Premium detaylar, düzenli alanlar ve modern salon mimarisi.</p>
         </div>
       </div>
     </div>
@@ -780,47 +754,47 @@
 
   <section id="pricing" class="pricing">
     <div class="container">
-      <h2 class="section-title">Üyelik <span>Paketleri</span></h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" id="pricing-title">Üyelik <span>Paketleri</span></h2>
+      <p class="section-subtitle" id="pricing-subtitle">
         Paket detayları için Instagram üzerinden bizimle iletişime geçebilirsin.
       </p>
 
       <div class="pricing-grid">
         <div class="price-card">
-          <h3>1 Aylık</h3>
-          <div class="price-note">Başlangıç için uygun üyelik</div>
+          <h3 id="price-1-title">1 Aylık</h3>
+          <div class="price-note" id="price-1-note">Başlangıç için uygun üyelik</div>
           <ul class="price-list">
-            <li>Salon kullanım hakkı</li>
-            <li>Kardiyo + ağırlık alanı</li>
-            <li>Yeni başlayanlar için uygun</li>
-            <li>Bilgi için iletişime geç</li>
+            <li id="price-1-li-1">Salon kullanım hakkı</li>
+            <li id="price-1-li-2">Kardiyo + ağırlık alanı</li>
+            <li id="price-1-li-3">Yeni başlayanlar için uygun</li>
+            <li id="price-1-li-4">Bilgi için iletişime geç</li>
           </ul>
-          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-dark" style="width:100%;">Bilgi Al</a>
+          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-dark" style="width:100%;" id="price-btn-1">Bilgi Al</a>
         </div>
 
         <div class="price-card popular">
-          <div class="badge">EN ÇOK TERCİH EDİLEN</div>
-          <h3>3 Aylık</h3>
-          <div class="price-note">Düzenli gelişim için ideal üyelik</div>
+          <div class="badge" id="popular-badge">EN ÇOK TERCİH EDİLEN</div>
+          <h3 id="price-2-title">3 Aylık</h3>
+          <div class="price-note" id="price-2-note">Düzenli gelişim için ideal üyelik</div>
           <ul class="price-list">
-            <li>Salon kullanım hakkı</li>
-            <li>Düzenli sistem kurma avantajı</li>
-            <li>Gelişim için verimli süre</li>
-            <li>Bilgi için iletişime geç</li>
+            <li id="price-2-li-1">Salon kullanım hakkı</li>
+            <li id="price-2-li-2">Düzenli sistem kurma avantajı</li>
+            <li id="price-2-li-3">Gelişim için verimli süre</li>
+            <li id="price-2-li-4">Bilgi için iletişime geç</li>
           </ul>
-          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold" style="width:100%;">Bilgi Al</a>
+          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold" style="width:100%;" id="price-btn-2">Bilgi Al</a>
         </div>
 
         <div class="price-card">
-          <h3>12 Aylık</h3>
-          <div class="price-note">Uzun vadeli istikrarlı gelişim</div>
+          <h3 id="price-3-title">12 Aylık</h3>
+          <div class="price-note" id="price-3-note">Uzun vadeli istikrarlı gelişim</div>
           <ul class="price-list">
-            <li>Devamlılık odaklı plan</li>
-            <li>Alışkanlık oluşturmak için ideal</li>
-            <li>Ciddi hedefler için uygun</li>
-            <li>Bilgi için iletişime geç</li>
+            <li id="price-3-li-1">Devamlılık odaklı plan</li>
+            <li id="price-3-li-2">Alışkanlık oluşturmak için ideal</li>
+            <li id="price-3-li-3">Ciddi hedefler için uygun</li>
+            <li id="price-3-li-4">Bilgi için iletişime geç</li>
           </ul>
-          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-dark" style="width:100%;">Bilgi Al</a>
+          <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-dark" style="width:100%;" id="price-btn-3">Bilgi Al</a>
         </div>
       </div>
     </div>
@@ -828,72 +802,65 @@
 
   <section id="gallery">
     <div class="container">
-      <h2 class="section-title">Salon <span>Galerisi</span></h2>
-      <p class="section-subtitle">
-        Tempo Fitness’tan gerçek kareler.
-      </p>
+      <h2 class="section-title" id="gallery-title">Salon <span>Galerisi</span></h2>
+      <p class="section-subtitle" id="gallery-subtitle">Tempo Fitness’tan gerçek kareler.</p>
 
       <div class="gallery-grid">
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-      </div>
-
-      <div class="extra-gallery">
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
+        <img src="1.jpeg" alt="Tempo Fitness">
+        <img src="2.jpeg" alt="Tempo Fitness">
+        <img src="3.jpeg" alt="Tempo Fitness">
+        <img src="4.jpeg" alt="Tempo Fitness">
+        <img src="5.jpeg" alt="Tempo Fitness">
+        <img src="6.jpeg" alt="Tempo Fitness">
+        <img src="7.jpeg" alt="Tempo Fitness">
+        <img src="gallery2.jpg.jpeg" alt="Tempo Fitness">
+        <img src="gallery3.jpg.jpeg" alt="Tempo Fitness">
       </div>
     </div>
   </section>
 
   <section id="team" class="team">
     <div class="container">
-      <h2 class="section-title">Ekip <span>Arkadaşlarımız</span></h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" id="team-title">Ekip <span>Arkadaşlarımız</span></h2>
+      <p class="section-subtitle" id="team-subtitle">
         Tempo Fitness ekibi, üyelerimizin hedeflerine en doğru sistemle ulaşması için profesyonel destek sunar.
       </p>
 
       <div class="team-grid">
         <div class="team-card">
-          <div class="team-role">Baş Antrenör</div>
+          <div class="team-role" id="team-role-1">Baş Antrenör</div>
           <h3>HÜSEYİN BAYKARA</h3>
-          <p>Salonun antrenman sistemi, disiplin yapısı ve performans kültürünü yöneten baş antrenör.</p>
+          <p id="team-text-1">Salonun antrenman sistemi, disiplin yapısı ve performans kültürünü yöneten baş antrenör.</p>
         </div>
 
         <div class="team-card">
-          <div class="team-role">Personal Trainer</div>
+          <div class="team-role" id="team-role-2">Personal Trainer</div>
           <h3>ENES BEŞKAYA</h3>
-          <p>Kişiye özel antrenman yaklaşımı, gelişim takibi ve hedef odaklı çalışma sistemi.</p>
+          <p id="team-text-2">Kişiye özel antrenman yaklaşımı, gelişim takibi ve hedef odaklı çalışma sistemi.</p>
         </div>
 
         <div class="team-card">
-          <div class="team-role">Personal Trainer</div>
+          <div class="team-role" id="team-role-3">Personal Trainer</div>
           <h3>OLEKSANDR KORNİEREV</h3>
-          <p>Güç, kondisyon ve düzenli performans gelişimi üzerine birebir antrenman desteği.</p>
+          <p id="team-text-3">Güç, kondisyon ve düzenli performans gelişimi üzerine birebir antrenman desteği.</p>
         </div>
 
         <div class="team-card">
-          <div class="team-role">Personal Trainer</div>
+          <div class="team-role" id="team-role-4">Personal Trainer</div>
           <h3>MARYA PERSHYNA</h3>
-          <p>Form, denge ve sürdürülebilir gelişim odaklı kişisel antrenman desteği.</p>
+          <p id="team-text-4">Form, denge ve sürdürülebilir gelişim odaklı kişisel antrenman desteği.</p>
         </div>
 
         <div class="team-card">
-          <div class="team-role">Kadın Fitness Koçu</div>
+          <div class="team-role" id="team-role-5">Kadın Fitness Koçu</div>
           <h3>ELMAS EMANUELA ÖZTÜRK</h3>
-          <p>Kadın üyeler için sıkılaşma, form kazanımı ve düzenli antrenman sürecine özel destek.</p>
+          <p id="team-text-5">Kadın üyeler için sıkılaşma, form kazanımı ve düzenli antrenman sürecine özel destek.</p>
         </div>
 
         <div class="team-card">
-          <div class="team-role">Beslenme / Danışman</div>
+          <div class="team-role" id="team-role-6">Beslenme / Danışman</div>
           <h3>MERVE DOGANNAY</h3>
-          <p>Beslenme düzeni, hedef uyumu ve yaşam tarzına uygun yönlendirme desteği.</p>
+          <p id="team-text-6">Beslenme düzeni, hedef uyumu ve yaşam tarzına uygun yönlendirme desteği.</p>
         </div>
       </div>
     </div>
@@ -902,44 +869,42 @@
   <section class="cta">
     <div class="container">
       <div class="cta-box">
-        <h2>Hazırsan <span>başlayalım</span></h2>
-        <p>
-          Daha güçlü görünmek, daha iyi hissetmek ve disiplinli bir sisteme girmek için ilk adımı at.
-        </p>
-        <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">Hemen İletişime Geç</a>
+        <h2 id="cta-title">Hazırsan <span>başlayalım</span></h2>
+        <p id="cta-text">Daha güçlü görünmek, daha iyi hissetmek ve disiplinli bir sisteme girmek için ilk adımı at.</p>
+        <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold" id="cta-btn">Hemen İletişime Geç</a>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="container">
-      <h2 class="section-title">Bize <span>Ulaş</span></h2>
-      <p class="section-subtitle">
+      <h2 class="section-title" id="contact-title">Bize <span>Ulaş</span></h2>
+      <p class="section-subtitle" id="contact-subtitle">
         Bilgi almak ve salonu ziyaret etmek için bizimle iletişime geçebilirsin.
       </p>
 
       <div class="contact-wrap">
         <div class="contact-card">
-          <h3>İletişim Bilgileri</h3>
+          <h3 id="contact-card-title">İletişim Bilgileri</h3>
 
           <div class="contact-item">
-            <span>Instagram</span>
+            <span id="contact-instagram-label">Instagram</span>
             <a href="https://instagram.com/tempofitnessgym" target="_blank">@tempofitnessgym</a>
           </div>
 
           <div class="contact-item">
-            <span>Adres</span>
-            <strong>Oba, Fabrika Cd. Tan Apt No: 9/1 Dükkan 1, 07400 Alanya / Antalya</strong>
+            <span id="contact-address-label">Adres</span>
+            <strong id="contact-address-text">Oba, Fabrika Cd. Tan Apt No: 9/1 Dükkan 1, 07400 Alanya / Antalya</strong>
           </div>
 
           <div class="contact-actions">
-            <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">Instagram</a>
-            <a href="https://share.google/dslp1Xg6f7hNiYsRL" target="_blank" class="btn btn-dark">Konumu Aç</a>
+            <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold" id="contact-btn-1">Instagram</a>
+            <a href="https://share.google/dslp1Xg6f7hNiYsRL" target="_blank" class="btn btn-dark" id="contact-btn-2">Konumu Aç</a>
           </div>
         </div>
 
         <div class="map-card">
-          <h3>Konum</h3>
+          <h3 id="map-title">Konum</h3>
           <div class="map-box">
             <iframe
               src="https://www.google.com/maps?q=Oba,%20Fabrika%20Cd.%20Tan%20Apt%20No9/1%20Dükkan1,%2007400%20Alanya/Antalya&output=embed"
@@ -954,10 +919,414 @@
 
   <footer>
     <div class="container footer-wrap">
-      <div>© 2026 Tempo Fitness. Tüm hakları saklıdır.</div>
-      <div>Tempo Fitness | Alanya Premium Gym</div>
+      <div id="footer-left">© 2026 Tempo Fitness. Tüm hakları saklıdır.</div>
+      <div id="footer-right">Tempo Fitness | Alanya Premium Gym</div>
     </div>
   </footer>
 
+  <script>
+    const translations = {
+      tr: {
+        navAbout: "Hakkımızda",
+        navFeatures: "Özellikler",
+        navPricing: "Paketler",
+        navGallery: "Galeri",
+        navTeam: "Ekip",
+        navContact: "İletişim",
+
+        heroTag: "ALANYA’DA PREMIUM SPOR DENEYİMİ",
+        heroTitle: "Gücünü <span>Tempo</span> ile Yükselt",
+        heroText: "Modern ekipmanlar, ferah kardiyo alanı, güçlü atmosfer ve gerçek sonuç odaklı sistem. Tempo Fitness’ta sadece spor yapmazsın, seviyeni yükseltirsin.",
+        heroBtn1: "Instagram'dan Yaz",
+        heroBtn2: "Salonumuzu Gör",
+
+        stat1Title: "Modern",
+        stat1Text: "Yeni nesil ekipmanlar ve ferah salon düzeni",
+        stat2Title: "Premium",
+        stat2Text: "Şık tasarım, temiz alanlar ve güçlü atmosfer",
+        stat3Title: "Sonuç",
+        stat3Text: "Kas gelişimi, yağ yakımı ve performans odaklı sistem",
+
+        aboutSectionTitle: "Neden <span>Tempo Fitness?</span>",
+        aboutSectionSubtitle: "Geniş alan, güçlü ekipmanlar, premium görünüm ve motive eden atmosfer.",
+        aboutTitle: "Disiplin. Kalite. <span>Gelişim.</span>",
+        aboutText1: "Tempo Fitness, hem yeni başlayanlara hem de ciddi antrenman yapanlara hitap eden modern bir spor salonudur. Kardiyo alanı, makineler, serbest ağırlık bölümü ve sosyal alanlarıyla gerçek salon deneyimi sunar.",
+        aboutText2: "Burada amaç sadece kayıt olmak değil; gelişmek, güçlenmek ve kendinin daha iyi versiyonuna ulaşmaktır.",
+        aboutText3: "Güçlü başlangıç için doğru yer: <strong>Tempo Fitness</strong>.",
+        aboutBtn: "İletişime Geç",
+
+        featuresTitle: "Salonun <span>Avantajları</span>",
+        featuresSubtitle: "Performans, konfor ve görünümü bir arada sunan detaylar.",
+        feature1Title: "Makine & Ağırlık Alanı",
+        feature1Text: "Verimli çalışma düzeni, güçlü ekipmanlar ve ferah kullanım alanı.",
+        feature2Title: "Kardiyo Bölümü",
+        feature2Text: "Cam kenarı yerleşim, koşu bantları, bisikletler ve modern atmosfer.",
+        feature3Title: "Bar & Resepsiyon",
+        feature3Text: "Karşılama alanı, sosyal his ve güçlü marka deneyimi.",
+        feature4Title: "Temiz ve Şık Tasarım",
+        feature4Text: "Premium detaylar, düzenli alanlar ve modern salon mimarisi.",
+
+        pricingTitle: "Üyelik <span>Paketleri</span>",
+        pricingSubtitle: "Paket detayları için Instagram üzerinden bizimle iletişime geçebilirsin.",
+        price1Title: "1 Aylık",
+        price1Note: "Başlangıç için uygun üyelik",
+        price1Li1: "Salon kullanım hakkı",
+        price1Li2: "Kardiyo + ağırlık alanı",
+        price1Li3: "Yeni başlayanlar için uygun",
+        price1Li4: "Bilgi için iletişime geç",
+        price2Title: "3 Aylık",
+        price2Note: "Düzenli gelişim için ideal üyelik",
+        price2Li1: "Salon kullanım hakkı",
+        price2Li2: "Düzenli sistem kurma avantajı",
+        price2Li3: "Gelişim için verimli süre",
+        price2Li4: "Bilgi için iletişime geç",
+        price3Title: "12 Aylık",
+        price3Note: "Uzun vadeli istikrarlı gelişim",
+        price3Li1: "Devamlılık odaklı plan",
+        price3Li2: "Alışkanlık oluşturmak için ideal",
+        price3Li3: "Ciddi hedefler için uygun",
+        price3Li4: "Bilgi için iletişime geç",
+        popularBadge: "EN ÇOK TERCİH EDİLEN",
+        priceBtn: "Bilgi Al",
+
+        galleryTitle: "Salon <span>Galerisi</span>",
+        gallerySubtitle: "Tempo Fitness’tan gerçek kareler.",
+
+        teamTitle: "Ekip <span>Arkadaşlarımız</span>",
+        teamSubtitle: "Tempo Fitness ekibi, üyelerimizin hedeflerine en doğru sistemle ulaşması için profesyonel destek sunar.",
+        teamRole1: "Baş Antrenör",
+        teamText1: "Salonun antrenman sistemi, disiplin yapısı ve performans kültürünü yöneten baş antrenör.",
+        teamRole2: "Personal Trainer",
+        teamText2: "Kişiye özel antrenman yaklaşımı, gelişim takibi ve hedef odaklı çalışma sistemi.",
+        teamRole3: "Personal Trainer",
+        teamText3: "Güç, kondisyon ve düzenli performans gelişimi üzerine birebir antrenman desteği.",
+        teamRole4: "Personal Trainer",
+        teamText4: "Form, denge ve sürdürülebilir gelişim odaklı kişisel antrenman desteği.",
+        teamRole5: "Kadın Fitness Koçu",
+        teamText5: "Kadın üyeler için sıkılaşma, form kazanımı ve düzenli antrenman sürecine özel destek.",
+        teamRole6: "Beslenme / Danışman",
+        teamText6: "Beslenme düzeni, hedef uyumu ve yaşam tarzına uygun yönlendirme desteği.",
+
+        ctaTitle: "Hazırsan <span>başlayalım</span>",
+        ctaText: "Daha güçlü görünmek, daha iyi hissetmek ve disiplinli bir sisteme girmek için ilk adımı at.",
+        ctaBtn: "Hemen İletişime Geç",
+
+        contactTitle: "Bize <span>Ulaş</span>",
+        contactSubtitle: "Bilgi almak ve salonu ziyaret etmek için bizimle iletişime geçebilirsin.",
+        contactCardTitle: "İletişim Bilgileri",
+        contactInstagramLabel: "Instagram",
+        contactAddressLabel: "Adres",
+        contactBtn1: "Instagram",
+        contactBtn2: "Konumu Aç",
+        mapTitle: "Konum",
+
+        footerLeft: "© 2026 Tempo Fitness. Tüm hakları saklıdır.",
+        footerRight: "Tempo Fitness | Alanya Premium Gym"
+      },
+
+      en: {
+        navAbout: "About",
+        navFeatures: "Features",
+        navPricing: "Plans",
+        navGallery: "Gallery",
+        navTeam: "Team",
+        navContact: "Contact",
+
+        heroTag: "PREMIUM FITNESS EXPERIENCE IN ALANYA",
+        heroTitle: "Boost Your Power with <span>Tempo</span>",
+        heroText: "Modern equipment, a spacious cardio area, a strong atmosphere and a results-driven system. At Tempo Fitness, you do not just work out, you level up.",
+        heroBtn1: "Message on Instagram",
+        heroBtn2: "See Our Gym",
+
+        stat1Title: "Modern",
+        stat1Text: "Next-generation equipment and spacious gym layout",
+        stat2Title: "Premium",
+        stat2Text: "Stylish design, clean areas and strong atmosphere",
+        stat3Title: "Results",
+        stat3Text: "A system focused on muscle gain, fat loss and performance",
+
+        aboutSectionTitle: "Why <span>Tempo Fitness?</span>",
+        aboutSectionSubtitle: "Large space, strong equipment, premium look and a motivating atmosphere.",
+        aboutTitle: "Discipline. Quality. <span>Progress.</span>",
+        aboutText1: "Tempo Fitness is a modern gym designed for both beginners and serious athletes. With its cardio zone, machines, free-weight section and social areas, it offers a real gym experience.",
+        aboutText2: "The goal here is not just to sign up, but to improve, get stronger and reach a better version of yourself.",
+        aboutText3: "The right place for a strong start: <strong>Tempo Fitness</strong>.",
+        aboutBtn: "Get in Touch",
+
+        featuresTitle: "Gym <span>Advantages</span>",
+        featuresSubtitle: "Details that bring together performance, comfort and appearance.",
+        feature1Title: "Machines & Weights",
+        feature1Text: "Efficient training setup, strong equipment and spacious usage area.",
+        feature2Title: "Cardio Zone",
+        feature2Text: "Window-side placement, treadmills, bicycles and a modern atmosphere.",
+        feature3Title: "Bar & Reception",
+        feature3Text: "Welcoming area, social feel and a strong brand experience.",
+        feature4Title: "Clean & Stylish Design",
+        feature4Text: "Premium details, organized spaces and modern gym architecture.",
+
+        pricingTitle: "Membership <span>Plans</span>",
+        pricingSubtitle: "Contact us on Instagram for plan details.",
+        price1Title: "1 Month",
+        price1Note: "A suitable membership to get started",
+        price1Li1: "Gym access",
+        price1Li2: "Cardio + weight area",
+        price1Li3: "Suitable for beginners",
+        price1Li4: "Contact us for details",
+        price2Title: "3 Months",
+        price2Note: "Ideal membership for regular progress",
+        price2Li1: "Gym access",
+        price2Li2: "Advantage of building a routine",
+        price2Li3: "Efficient period for progress",
+        price2Li4: "Contact us for details",
+        price3Title: "12 Months",
+        price3Note: "Long-term steady progress",
+        price3Li1: "Consistency-focused plan",
+        price3Li2: "Ideal for building habits",
+        price3Li3: "Suitable for serious goals",
+        price3Li4: "Contact us for details",
+        popularBadge: "MOST PREFERRED",
+        priceBtn: "Get Info",
+
+        galleryTitle: "Gym <span>Gallery</span>",
+        gallerySubtitle: "Real moments from Tempo Fitness.",
+
+        teamTitle: "Our <span>Team</span>",
+        teamSubtitle: "The Tempo Fitness team provides professional support to help our members reach their goals with the right system.",
+        teamRole1: "Head Coach",
+        teamText1: "The head coach who leads the gym’s training system, discipline and performance culture.",
+        teamRole2: "Personal Trainer",
+        teamText2: "Personalized training approach, progress tracking and goal-focused system.",
+        teamRole3: "Personal Trainer",
+        teamText3: "One-on-one support focused on strength, conditioning and regular performance development.",
+        teamRole4: "Personal Trainer",
+        teamText4: "Personal training support focused on shape, balance and sustainable progress.",
+        teamRole5: "Women’s Fitness Coach",
+        teamText5: "Special support for women members in toning, shape improvement and a structured training process.",
+        teamRole6: "Nutrition / Consultant",
+        teamText6: "Guidance on nutrition routine, goal alignment and lifestyle-based support.",
+
+        ctaTitle: "If You’re Ready, <span>Let’s Start</span>",
+        ctaText: "Take the first step to look stronger, feel better and enter a disciplined system.",
+        ctaBtn: "Contact Now",
+
+        contactTitle: "Contact <span>Us</span>",
+        contactSubtitle: "You can contact us for information and to visit the gym.",
+        contactCardTitle: "Contact Information",
+        contactInstagramLabel: "Instagram",
+        contactAddressLabel: "Address",
+        contactBtn1: "Instagram",
+        contactBtn2: "Open Location",
+        mapTitle: "Location",
+
+        footerLeft: "© 2026 Tempo Fitness. All rights reserved.",
+        footerRight: "Tempo Fitness | Alanya Premium Gym"
+      },
+
+      ru: {
+        navAbout: "О нас",
+        navFeatures: "Преимущества",
+        navPricing: "Пакеты",
+        navGallery: "Галерея",
+        navTeam: "Команда",
+        navContact: "Контакты",
+
+        heroTag: "ПРЕМИУМ ФИТНЕС В АЛАНЬЕ",
+        heroTitle: "Усиль свою форму с <span>Tempo</span>",
+        heroText: "Современное оборудование, просторная кардио-зона, сильная атмосфера и система, ориентированная на результат. В Tempo Fitness ты не просто тренируешься, ты выходишь на новый уровень.",
+        heroBtn1: "Написать в Instagram",
+        heroBtn2: "Посмотреть зал",
+
+        stat1Title: "Современно",
+        stat1Text: "Оборудование нового поколения и просторная планировка",
+        stat2Title: "Премиум",
+        stat2Text: "Стильный дизайн, чистота и сильная атмосфера",
+        stat3Title: "Результат",
+        stat3Text: "Система для набора мышц, сжигания жира и роста формы",
+
+        aboutSectionTitle: "Почему <span>Tempo Fitness?</span>",
+        aboutSectionSubtitle: "Большое пространство, мощное оборудование, премиальный вид и мотивирующая атмосфера.",
+        aboutTitle: "Дисциплина. Качество. <span>Развитие.</span>",
+        aboutText1: "Tempo Fitness — это современный зал как для начинающих, так и для тех, кто тренируется серьёзно. Кардио-зона, тренажёры, свободные веса и социальные зоны создают настоящий фитнес-опыт.",
+        aboutText2: "Здесь цель — не просто записаться, а развиваться, становиться сильнее и прийти к лучшей версии себя.",
+        aboutText3: "Правильное место для сильного старта: <strong>Tempo Fitness</strong>.",
+        aboutBtn: "Связаться",
+
+        featuresTitle: "Преимущества <span>зала</span>",
+        featuresSubtitle: "Детали, объединяющие результат, комфорт и стиль.",
+        feature1Title: "Тренажёры и веса",
+        feature1Text: "Эффективная организация тренировок, сильное оборудование и простор.",
+        feature2Title: "Кардио-зона",
+        feature2Text: "Расположение у окон, беговые дорожки, велосипеды и современная атмосфера.",
+        feature3Title: "Бар и ресепшен",
+        feature3Text: "Приветственная зона, ощущение комфорта и сильный имидж бренда.",
+        feature4Title: "Чистый и стильный дизайн",
+        feature4Text: "Премиальные детали, порядок и современная архитектура зала.",
+
+        pricingTitle: "Членские <span>пакеты</span>",
+        pricingSubtitle: "Для подробностей о пакетах свяжитесь с нами через Instagram.",
+        price1Title: "1 Месяц",
+        price1Note: "Подходящий пакет для старта",
+        price1Li1: "Доступ в зал",
+        price1Li2: "Кардио + силовая зона",
+        price1Li3: "Подходит для начинающих",
+        price1Li4: "Свяжитесь с нами для деталей",
+        price2Title: "3 Месяца",
+        price2Note: "Идеальный пакет для регулярного прогресса",
+        price2Li1: "Доступ в зал",
+        price2Li2: "Преимущество в выработке режима",
+        price2Li3: "Эффективный срок для прогресса",
+        price2Li4: "Свяжитесь с нами для деталей",
+        price3Title: "12 Месяцев",
+        price3Note: "Долгосрочный стабильный прогресс",
+        price3Li1: "План для постоянства",
+        price3Li2: "Идеально для формирования привычки",
+        price3Li3: "Подходит для серьёзных целей",
+        price3Li4: "Свяжитесь с нами для деталей",
+        popularBadge: "САМЫЙ ПОПУЛЯРНЫЙ",
+        priceBtn: "Подробнее",
+
+        galleryTitle: "Галерея <span>зала</span>",
+        gallerySubtitle: "Реальные кадры из Tempo Fitness.",
+
+        teamTitle: "Наша <span>команда</span>",
+        teamSubtitle: "Команда Tempo Fitness оказывает профессиональную поддержку, чтобы наши участники достигали своих целей с правильной системой.",
+        teamRole1: "Главный тренер",
+        teamText1: "Главный тренер, который управляет системой тренировок, дисциплиной и культурой результата в зале.",
+        teamRole2: "Персональный тренер",
+        teamText2: "Индивидуальный подход к тренировкам, контроль прогресса и система работы на результат.",
+        teamRole3: "Персональный тренер",
+        teamText3: "Индивидуальная поддержка, ориентированная на силу, выносливость и стабильное развитие формы.",
+        teamRole4: "Персональный тренер",
+        teamText4: "Персональная поддержка, направленная на форму, баланс и устойчивый прогресс.",
+        teamRole5: "Женский фитнес-тренер",
+        teamText5: "Специальная поддержка для женщин: подтяжка тела, форма и системный тренировочный процесс.",
+        teamRole6: "Питание / Консультант",
+        teamText6: "Поддержка по питанию, соответствию цели и образу жизни.",
+
+        ctaTitle: "Если ты готов, <span>начнём</span>",
+        ctaText: "Сделай первый шаг, чтобы выглядеть сильнее, чувствовать себя лучше и войти в дисциплинированную систему.",
+        ctaBtn: "Связаться сейчас",
+
+        contactTitle: "Свяжитесь <span>с нами</span>",
+        contactSubtitle: "Вы можете связаться с нами для информации и посещения зала.",
+        contactCardTitle: "Контактная информация",
+        contactInstagramLabel: "Instagram",
+        contactAddressLabel: "Адрес",
+        contactBtn1: "Instagram",
+        contactBtn2: "Открыть локацию",
+        mapTitle: "Локация",
+
+        footerLeft: "© 2026 Tempo Fitness. Все права защищены.",
+        footerRight: "Tempo Fitness | Премиум зал в Аланье"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+
+      document.documentElement.lang = lang;
+
+      document.getElementById("nav-about").innerText = t.navAbout;
+      document.getElementById("nav-features").innerText = t.navFeatures;
+      document.getElementById("nav-pricing").innerText = t.navPricing;
+      document.getElementById("nav-gallery").innerText = t.navGallery;
+      document.getElementById("nav-team").innerText = t.navTeam;
+      document.getElementById("nav-contact").innerText = t.navContact;
+
+      document.getElementById("hero-tag").innerText = t.heroTag;
+      document.getElementById("hero-title").innerHTML = t.heroTitle;
+      document.getElementById("hero-text").innerText = t.heroText;
+      document.getElementById("hero-btn-1").innerText = t.heroBtn1;
+      document.getElementById("hero-btn-2").innerText = t.heroBtn2;
+
+      document.getElementById("stat-1-title").innerText = t.stat1Title;
+      document.getElementById("stat-1-text").innerText = t.stat1Text;
+      document.getElementById("stat-2-title").innerText = t.stat2Title;
+      document.getElementById("stat-2-text").innerText = t.stat2Text;
+      document.getElementById("stat-3-title").innerText = t.stat3Title;
+      document.getElementById("stat-3-text").innerText = t.stat3Text;
+
+      document.getElementById("about-section-title").innerHTML = t.aboutSectionTitle;
+      document.getElementById("about-section-subtitle").innerText = t.aboutSectionSubtitle;
+      document.getElementById("about-title").innerHTML = t.aboutTitle;
+      document.getElementById("about-text-1").innerText = t.aboutText1;
+      document.getElementById("about-text-2").innerText = t.aboutText2;
+      document.getElementById("about-text-3").innerHTML = t.aboutText3;
+      document.getElementById("about-btn").innerText = t.aboutBtn;
+
+      document.getElementById("features-title").innerHTML = t.featuresTitle;
+      document.getElementById("features-subtitle").innerText = t.featuresSubtitle;
+      document.getElementById("feature-1-title").innerText = t.feature1Title;
+      document.getElementById("feature-1-text").innerText = t.feature1Text;
+      document.getElementById("feature-2-title").innerText = t.feature2Title;
+      document.getElementById("feature-2-text").innerText = t.feature2Text;
+      document.getElementById("feature-3-title").innerText = t.feature3Title;
+      document.getElementById("feature-3-text").innerText = t.feature3Text;
+      document.getElementById("feature-4-title").innerText = t.feature4Title;
+      document.getElementById("feature-4-text").innerText = t.feature4Text;
+
+      document.getElementById("pricing-title").innerHTML = t.pricingTitle;
+      document.getElementById("pricing-subtitle").innerText = t.pricingSubtitle;
+      document.getElementById("price-1-title").innerText = t.price1Title;
+      document.getElementById("price-1-note").innerText = t.price1Note;
+      document.getElementById("price-1-li-1").innerText = t.price1Li1;
+      document.getElementById("price-1-li-2").innerText = t.price1Li2;
+      document.getElementById("price-1-li-3").innerText = t.price1Li3;
+      document.getElementById("price-1-li-4").innerText = t.price1Li4;
+
+      document.getElementById("price-2-title").innerText = t.price2Title;
+      document.getElementById("price-2-note").innerText = t.price2Note;
+      document.getElementById("price-2-li-1").innerText = t.price2Li1;
+      document.getElementById("price-2-li-2").innerText = t.price2Li2;
+      document.getElementById("price-2-li-3").innerText = t.price2Li3;
+      document.getElementById("price-2-li-4").innerText = t.price2Li4;
+
+      document.getElementById("price-3-title").innerText = t.price3Title;
+      document.getElementById("price-3-note").innerText = t.price3Note;
+      document.getElementById("price-3-li-1").innerText = t.price3Li1;
+      document.getElementById("price-3-li-2").innerText = t.price3Li2;
+      document.getElementById("price-3-li-3").innerText = t.price3Li3;
+      document.getElementById("price-3-li-4").innerText = t.price3Li4;
+
+      document.getElementById("popular-badge").innerText = t.popularBadge;
+      document.getElementById("price-btn-1").innerText = t.priceBtn;
+      document.getElementById("price-btn-2").innerText = t.priceBtn;
+      document.getElementById("price-btn-3").innerText = t.priceBtn;
+
+      document.getElementById("gallery-title").innerHTML = t.galleryTitle;
+      document.getElementById("gallery-subtitle").innerText = t.gallerySubtitle;
+
+      document.getElementById("team-title").innerHTML = t.teamTitle;
+      document.getElementById("team-subtitle").innerText = t.teamSubtitle;
+      document.getElementById("team-role-1").innerText = t.teamRole1;
+      document.getElementById("team-text-1").innerText = t.teamText1;
+      document.getElementById("team-role-2").innerText = t.teamRole2;
+      document.getElementById("team-text-2").innerText = t.teamText2;
+      document.getElementById("team-role-3").innerText = t.teamRole3;
+      document.getElementById("team-text-3").innerText = t.teamText3;
+      document.getElementById("team-role-4").innerText = t.teamRole4;
+      document.getElementById("team-text-4").innerText = t.teamText4;
+      document.getElementById("team-role-5").innerText = t.teamRole5;
+      document.getElementById("team-text-5").innerText = t.teamText5;
+      document.getElementById("team-role-6").innerText = t.teamRole6;
+      document.getElementById("team-text-6").innerText = t.teamText6;
+
+      document.getElementById("cta-title").innerHTML = t.ctaTitle;
+      document.getElementById("cta-text").innerText = t.ctaText;
+      document.getElementById("cta-btn").innerText = t.ctaBtn;
+
+      document.getElementById("contact-title").innerHTML = t.contactTitle;
+      document.getElementById("contact-subtitle").innerText = t.contactSubtitle;
+      document.getElementById("contact-card-title").innerText = t.contactCardTitle;
+      document.getElementById("contact-instagram-label").innerText = t.contactInstagramLabel;
+      document.getElementById("contact-address-label").innerText = t.contactAddressLabel;
+      document.getElementById("contact-btn-1").innerText = t.contactBtn1;
+      document.getElementById("contact-btn-2").innerText = t.contactBtn2;
+      document.getElementById("map-title").innerText = t.mapTitle;
+
+      document.getElementById("footer-left").innerText = t.footerLeft;
+      document.getElementById("footer-right").innerText = t.footerRight;
+    }
+  </script>
 </body>
 </html>
