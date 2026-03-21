@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -117,17 +118,26 @@
       display: flex;
       align-items: center;
       position: relative;
-      background:
-        linear-gradient(to right, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.75) 100%),
-        url('hero.jpg') center/cover no-repeat;
+      overflow: hidden;
+      background: #000;
     }
 
-    .hero::after {
-      content: "";
+    .hero-video {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 30%);
-      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.76) 100%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 30%);
     }
 
     .hero-content {
@@ -200,6 +210,7 @@
       font-size: 14px;
       color: #c9c9c9;
       line-height: 1.5;
+      margin: 0;
     }
 
     section {
@@ -238,7 +249,7 @@
       overflow: hidden;
       min-height: 500px;
       background:
-        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.25)),
+        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.25)),
         url('about.jpg') center/cover no-repeat;
       border: 1px solid rgba(255,255,255,0.08);
     }
@@ -390,14 +401,14 @@
       transform: scale(1.02);
     }
 
-    .gallery-item:nth-child(1) { background: url('gallery1.jpg'); }
-    .gallery-item:nth-child(2) { background: url('gallery2.jpg'); }
-    .gallery-item:nth-child(3) { background: url('gallery3.jpg'); }
-    .gallery-item:nth-child(4) { background: url('gallery4.jpg'); }
-    .gallery-item:nth-child(5) { background: url('gallery5.jpg'); }
-    .gallery-item:nth-child(6) { background: url('gallery6.jpg'); }
-    .gallery-item:nth-child(7) { background: url('gallery7.jpg'); }
-    .gallery-item:nth-child(8) { background: url('gallery8.jpg'); }
+    .gallery-item:nth-child(1) { background: url('hero.jpg'); }
+    .gallery-item:nth-child(2) { background: url('gallery3.jpg'); }
+    .gallery-item:nth-child(3) { background: url('gallery2.jpg'); }
+    .gallery-item:nth-child(4) { background: url('about.jpg'); }
+    .gallery-item:nth-child(5) { background: url('hero.jpg'); }
+    .gallery-item:nth-child(6) { background: url('gallery3.jpg'); }
+    .gallery-item:nth-child(7) { background: url('gallery2.jpg'); }
+    .gallery-item:nth-child(8) { background: url('about.jpg'); }
 
     .contact-wrap {
       display: grid;
@@ -585,24 +596,32 @@
   </header>
 
   <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="tempo-video.mp4.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
     <div class="container">
       <div class="hero-content">
         <div class="hero-tag">ALANYA’DA PREMIUM SPOR DENEYİMİ</div>
+
         <h1>Gücünü <span>Tempo</span> ile Yükselt</h1>
+
         <p>
           Modern ekipmanlar, ferah kardiyo alanı, güçlü atmosfer ve gerçek sonuç odaklı sistem.
-          Tempo Fitness’ta sadece antrenman yapmazsın, seviyeni yükseltirsin.
+          Tempo Fitness’ta sadece spor yapmazsın, seviyeni yükseltirsin.
         </p>
 
         <div class="hero-buttons">
           <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">Instagram'dan Yaz</a>
-          <a href="#gallery" class="btn btn-dark">Salonumuzu Gör</a>
+          <a href="#gallery" class="btn btn-dark">Salonu Gör</a>
         </div>
 
         <div class="hero-stats">
           <div class="stat-box">
             <h3>Modern</h3>
-            <p>Yeni nesil ekipmanlar ve düzenli salon planı</p>
+            <p>Yeni nesil ekipmanlar ve ferah salon düzeni</p>
           </div>
           <div class="stat-box">
             <h3>Premium</h3>
@@ -621,17 +640,17 @@
     <div class="container">
       <h2 class="section-title">Neden <span>Tempo Fitness?</span></h2>
       <p class="section-subtitle">
-        Geniş alan, temiz düzen, güçlü ekipmanlar ve motive eden atmosfer.
-        Tempo Fitness, Alanya’da ciddi antrenman yapmak isteyenler için tasarlandı.
+        Geniş alan, güçlü ekipmanlar, premium görünüm ve motive eden atmosfer.
       </p>
 
       <div class="about-grid">
         <div class="about-image"></div>
+
         <div class="about-card">
           <h3>Disiplin. Kalite. <span>Gelişim.</span></h3>
           <p>
             Tempo Fitness, hem yeni başlayanlara hem de ciddi antrenman yapanlara hitap eden modern bir spor salonudur.
-            Kardiyo alanı, serbest ağırlık bölümü, makineler, soyunma alanları ve resepsiyon düzeniyle gerçek bir salon deneyimi sunar.
+            Kardiyo alanı, makineler, serbest ağırlık bölümü ve bar alanıyla gerçek salon deneyimi sunar.
           </p>
           <p>
             Burada amaç sadece kayıt olmak değil; gelişmek, güçlenmek ve kendinin daha iyi versiyonuna ulaşmaktır.
@@ -655,23 +674,26 @@
       <div class="features">
         <div class="feature-box">
           <div class="feature-icon">🏋️</div>
-          <h4>Serbest Ağırlık Alanı</h4>
-          <p>Dumbbell rafları, aynalı alanlar ve verimli antrenman düzeni.</p>
+          <h4>Makine & Ağırlık Alanı</h4>
+          <p>Verimli çalışma düzeni, güçlü ekipmanlar ve ferah kullanım alanı.</p>
         </div>
+
         <div class="feature-box">
           <div class="feature-icon">🏃</div>
           <h4>Kardiyo Bölümü</h4>
-          <p>Cam kenarı ferah yerleşimle koşu bandı, bisiklet ve eliptik alanı.</p>
+          <p>Cam kenarı yerleşim, koşu bantları, bisikletler ve modern atmosfer.</p>
         </div>
-        <div class="feature-box">
-          <div class="feature-icon">✨</div>
-          <h4>Temiz ve Şık Alanlar</h4>
-          <p>Soyunma odaları, duş ve ortak alanlarda düzenli premium görünüm.</p>
-        </div>
+
         <div class="feature-box">
           <div class="feature-icon">☕</div>
-          <h4>Resepsiyon & Bar</h4>
-          <p>Karşılama alanı, sosyal atmosfer ve güçlü marka deneyimi.</p>
+          <h4>Bar & Resepsiyon</h4>
+          <p>Karşılama alanı, sosyal his ve güçlü marka deneyimi.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">✨</div>
+          <h4>Temiz ve Şık Tasarım</h4>
+          <p>Premium detaylar, düzenli alanlar ve modern salon mimarisi.</p>
         </div>
       </div>
     </div>
@@ -681,13 +703,13 @@
     <div class="container">
       <h2 class="section-title">Üyelik <span>Paketleri</span></h2>
       <p class="section-subtitle">
-        Paket detayları ve kayıt bilgisi için Instagram üzerinden bizimle iletişime geçebilirsin.
+        Paket detayları için Instagram üzerinden bizimle iletişime geçebilirsin.
       </p>
 
       <div class="pricing-grid">
         <div class="price-card">
           <h3>1 Aylık</h3>
-          <div class="price-note">Kısa süreli başlangıç paketi</div>
+          <div class="price-note">Başlangıç için uygun üyelik</div>
           <ul class="price-list">
             <li>Salon kullanım hakkı</li>
             <li>Kardiyo + ağırlık alanı</li>
@@ -700,10 +722,10 @@
         <div class="price-card popular">
           <div class="badge">EN ÇOK TERCİH EDİLEN</div>
           <h3>3 Aylık</h3>
-          <div class="price-note">Düzenli gelişim için ideal paket</div>
+          <div class="price-note">Düzenli gelişim için ideal üyelik</div>
           <ul class="price-list">
             <li>Salon kullanım hakkı</li>
-            <li>Disiplinli sistem kurma avantajı</li>
+            <li>Düzenli sistem kurma avantajı</li>
             <li>Gelişim için verimli süre</li>
             <li>Bilgi için iletişime geç</li>
           </ul>
@@ -712,11 +734,11 @@
 
         <div class="price-card">
           <h3>12 Aylık</h3>
-          <div class="price-note">Uzun vadeli istikrarlı gelişim paketi</div>
+          <div class="price-note">Uzun vadeli istikrarlı gelişim</div>
           <ul class="price-list">
-            <li>En güçlü devamlılık planı</li>
+            <li>Devamlılık odaklı plan</li>
             <li>Alışkanlık oluşturmak için ideal</li>
-            <li>Ciddi hedefi olanlara uygun</li>
+            <li>Ciddi hedefler için uygun</li>
             <li>Bilgi için iletişime geç</li>
           </ul>
           <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-dark" style="width:100%;">Bilgi Al</a>
@@ -751,7 +773,6 @@
         <h2>Hazırsan <span>başlayalım</span></h2>
         <p>
           Daha güçlü görünmek, daha iyi hissetmek ve disiplinli bir sisteme girmek için ilk adımı at.
-          Tempo Fitness seni daha iyi versiyonuna taşısın.
         </p>
         <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">Hemen İletişime Geç</a>
       </div>
