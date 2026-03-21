@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tempo Fitness | Alanya</title>
-  <meta name="description" content="Tempo Fitness Alanya - Premium spor salonu deneyimi. Modern ekipman, güçlü atmosfer ve gerçek sonuç." />
+  <meta name="description" content="Tempo Fitness Alanya - Premium spor salonu deneyimi. Modern ekipman, güçlü atmosfer ve profesyonel antrenör kadrosu." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
       left: 0;
       width: 100%;
       z-index: 999;
-      background: rgba(0,0,0,0.65);
+      background: rgba(0, 0, 0, 0.65);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -57,7 +57,7 @@
       font-size: 28px;
       font-weight: 900;
       letter-spacing: 1px;
-      color: #ffffff;
+      color: #fff;
     }
 
     .logo span {
@@ -136,8 +136,8 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(to right, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.78) 100%),
-        radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 30%);
+        linear-gradient(to right, rgba(0,0,0,0.90) 12%, rgba(0,0,0,0.48) 55%, rgba(0,0,0,0.80) 100%),
+        radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 30%);
     }
 
     .hero-content {
@@ -248,8 +248,8 @@
       overflow: hidden;
       min-height: 500px;
       background:
-        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.30)),
-        url('hero.jpg.jpeg') center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.28)),
+        url('about.jpg.jpeg') center/cover no-repeat;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -416,9 +416,69 @@
       gap: 18px;
     }
 
-    .extra-gallery .gallery-item:nth-child(1) { background: url('5.jpeg'); min-height: 240px; }
-    .extra-gallery .gallery-item:nth-child(2) { background: url('6.jpeg'); min-height: 240px; }
-    .extra-gallery .gallery-item:nth-child(3) { background: url('7.jpeg'); min-height: 240px; }
+    .extra-gallery .gallery-item:nth-child(1) {
+      background: url('5.jpeg');
+      min-height: 240px;
+    }
+
+    .extra-gallery .gallery-item:nth-child(2) {
+      background: url('6.jpeg');
+      min-height: 240px;
+    }
+
+    .extra-gallery .gallery-item:nth-child(3) {
+      background: url('7.jpeg');
+      min-height: 240px;
+    }
+
+    .team {
+      background: #0d0d0d;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .team-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 28px;
+      transition: 0.3s;
+      min-height: 220px;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.35);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .team-role {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #000;
+      background: linear-gradient(135deg, #d4af37, #f1d77a);
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .team-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .team-card p {
+      color: #bdbdbd;
+      line-height: 1.8;
+      font-size: 15px;
+    }
 
     .contact-wrap {
       display: grid;
@@ -528,7 +588,8 @@
     @media (max-width: 1100px) {
       .features,
       .pricing-grid,
-      .hero-stats {
+      .hero-stats,
+      .team-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -569,7 +630,8 @@
       .pricing-grid,
       .gallery-grid,
       .extra-gallery,
-      .hero-stats {
+      .hero-stats,
+      .team-grid {
         grid-template-columns: 1fr;
       }
 
@@ -585,7 +647,8 @@
       .price-card,
       .contact-card,
       .map-card,
-      .cta-box {
+      .cta-box,
+      .team-card {
         padding: 26px;
       }
     }
@@ -596,11 +659,13 @@
   <header class="navbar">
     <div class="container nav-wrap">
       <a href="#" class="logo">TEMPO <span>FITNESS</span></a>
+
       <nav class="nav-links">
         <a href="#about">Hakkımızda</a>
         <a href="#features">Özellikler</a>
         <a href="#pricing">Paketler</a>
         <a href="#gallery">Galeri</a>
+        <a href="#team">Ekibimiz</a>
         <a href="#contact">İletişim</a>
         <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">İletişim</a>
       </nav>
@@ -635,10 +700,12 @@
             <h3>Modern</h3>
             <p>Yeni nesil ekipmanlar ve ferah salon düzeni</p>
           </div>
+
           <div class="stat-box">
             <h3>Premium</h3>
             <p>Şık tasarım, temiz alanlar ve güçlü atmosfer</p>
           </div>
+
           <div class="stat-box">
             <h3>Sonuç</h3>
             <p>Kas gelişimi, yağ yakımı ve performans odaklı sistem</p>
@@ -781,6 +848,53 @@
         <div class="gallery-item"></div>
         <div class="gallery-item"></div>
         <div class="gallery-item"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="team">
+    <div class="container">
+      <h2 class="section-title">Ekip <span>Arkadaşlarımız</span></h2>
+      <p class="section-subtitle">
+        Tempo Fitness ekibi, üyelerimizin hedeflerine en doğru sistemle ulaşması için profesyonel destek sunar.
+      </p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-role">Baş Antrenör</div>
+          <h3>HÜSEYİN BAYKARA</h3>
+          <p>Salonun antrenman sistemi, disiplin yapısı ve performans kültürünü yöneten baş antrenör.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-role">Personal Trainer</div>
+          <h3>ENES BEŞKAYA</h3>
+          <p>Kişiye özel antrenman yaklaşımı, gelişim takibi ve hedef odaklı çalışma sistemi.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-role">Personal Trainer</div>
+          <h3>OLEKSANDR KORNİEREV</h3>
+          <p>Güç, kondisyon ve düzenli performans gelişimi üzerine birebir antrenman desteği.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-role">Personal Trainer</div>
+          <h3>MARYA PERSHYNA</h3>
+          <p>Form, denge ve sürdürülebilir gelişim odaklı kişisel antrenman desteği.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-role">Kadın Fitness Koçu</div>
+          <h3>ELMAS EMANUELA ÖZTÜRK</h3>
+          <p>Kadın üyeler için sıkılaşma, form kazanımı ve düzenli antrenman sürecine özel destek.</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-role">Beslenme / Danışman</div>
+          <h3>MERVE DOGANNAY</h3>
+          <p>Beslenme düzeni, hedef uyumu ve yaşam tarzına uygun yönlendirme desteği.</p>
+        </div>
       </div>
     </div>
   </section>
