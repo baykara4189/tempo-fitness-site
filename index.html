@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tempo Fitness | Alanya</title>
-  <meta name="description" content="Tempo Fitness Alanya - Premium spor salonu deneyimi. Modern ekipman, güçlü atmosfer, gerçek sonuç." />
+  <meta name="description" content="Tempo Fitness Alanya - Premium spor salonu deneyimi. Modern ekipman, güçlü atmosfer ve gerçek sonuç." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -136,7 +136,7 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(to right, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.76) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.78) 100%),
         radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 30%);
     }
 
@@ -210,7 +210,6 @@
       font-size: 14px;
       color: #c9c9c9;
       line-height: 1.5;
-      margin: 0;
     }
 
     section {
@@ -249,8 +248,8 @@
       overflow: hidden;
       min-height: 500px;
       background:
-        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.25)),
-        url('about.jpg') center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.30)),
+        url('hero.jpg.jpeg') center/cover no-repeat;
       border: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -401,14 +400,25 @@
       transform: scale(1.02);
     }
 
-    .gallery-item:nth-child(1) { background: url('hero.jpg'); }
-    .gallery-item:nth-child(2) { background: url('gallery3.jpg'); }
-    .gallery-item:nth-child(3) { background: url('gallery2.jpg'); }
-    .gallery-item:nth-child(4) { background: url('about.jpg'); }
-    .gallery-item:nth-child(5) { background: url('hero.jpg'); }
-    .gallery-item:nth-child(6) { background: url('gallery3.jpg'); }
-    .gallery-item:nth-child(7) { background: url('gallery2.jpg'); }
-    .gallery-item:nth-child(8) { background: url('about.jpg'); }
+    .gallery-item:nth-child(1) { background: url('hero.jpg.jpeg'); }
+    .gallery-item:nth-child(2) { background: url('about.jpg.jpeg'); }
+    .gallery-item:nth-child(3) { background: url('gallery2.jpg.jpeg'); }
+    .gallery-item:nth-child(4) { background: url('gallery3.jpg.jpeg'); }
+    .gallery-item:nth-child(5) { background: url('1.jpeg'); }
+    .gallery-item:nth-child(6) { background: url('2.jpeg'); }
+    .gallery-item:nth-child(7) { background: url('3.jpeg'); }
+    .gallery-item:nth-child(8) { background: url('4.jpeg'); }
+
+    .extra-gallery {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .extra-gallery .gallery-item:nth-child(1) { background: url('5.jpeg'); min-height: 240px; }
+    .extra-gallery .gallery-item:nth-child(2) { background: url('6.jpeg'); min-height: 240px; }
+    .extra-gallery .gallery-item:nth-child(3) { background: url('7.jpeg'); min-height: 240px; }
 
     .contact-wrap {
       display: grid;
@@ -522,7 +532,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .gallery-grid {
+      .gallery-grid,
+      .extra-gallery {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -557,6 +568,7 @@
       .features,
       .pricing-grid,
       .gallery-grid,
+      .extra-gallery,
       .hero-stats {
         grid-template-columns: 1fr;
       }
@@ -615,7 +627,7 @@
 
         <div class="hero-buttons">
           <a href="https://instagram.com/tempofitnessgym" target="_blank" class="btn btn-gold">Instagram'dan Yaz</a>
-          <a href="#gallery" class="btn btn-dark">Salonu Gör</a>
+          <a href="#gallery" class="btn btn-dark">Salonumuzu Gör</a>
         </div>
 
         <div class="hero-stats">
@@ -650,7 +662,7 @@
           <h3>Disiplin. Kalite. <span>Gelişim.</span></h3>
           <p>
             Tempo Fitness, hem yeni başlayanlara hem de ciddi antrenman yapanlara hitap eden modern bir spor salonudur.
-            Kardiyo alanı, makineler, serbest ağırlık bölümü ve bar alanıyla gerçek salon deneyimi sunar.
+            Kardiyo alanı, makineler, serbest ağırlık bölümü ve sosyal alanlarıyla gerçek salon deneyimi sunar.
           </p>
           <p>
             Burada amaç sadece kayıt olmak değil; gelişmek, güçlenmek ve kendinin daha iyi versiyonuna ulaşmaktır.
@@ -760,6 +772,12 @@
         <div class="gallery-item"></div>
         <div class="gallery-item"></div>
         <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+        <div class="gallery-item"></div>
+      </div>
+
+      <div class="extra-gallery">
         <div class="gallery-item"></div>
         <div class="gallery-item"></div>
         <div class="gallery-item"></div>
